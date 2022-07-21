@@ -24,10 +24,16 @@ function [Kr,f_Kr,cpt] = rotation(K,X)
         
         boucle = false;
         
-        for l = 1:N
+        for l = 1:(N-1)
             
             for k = (l+1):N
-                t = 2*real(Kr(l,k))/(Kr(l,l) - Kr(k,k));
+		sub = Kr(l,l) - Kr(k,k);
+
+		if sub == 0
+			continue;
+		end
+
+                t = 2*real(Kr(l,k))/sub;
                 cos_theta = 1/sqrt(1+t*t);
                 sin_theta = t *  cos_theta;
                 W(l,l) = cos_theta;

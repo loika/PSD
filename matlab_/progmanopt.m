@@ -21,6 +21,7 @@ n = floor(sum(Pi));
 %algorithm part
 manifold = grassmannfactory(N,n);
 methode = @trustregions;
+problem = create_manopt(manifold,Pi,X,r)
 [v,vcost,iter,time] = solve_manopt(problem,methode,[]);
 K = v*v';
 fprintf("%2.6f",f(K,X,eye(size(K))));
