@@ -29,14 +29,10 @@ the use of program progrotation in matlab requires packages.
 the use of program progmanopt requires :  
 
 - pandas  
-
--autograd 1.4  
-
--pymanopt 2.0  
-
--pytorch  
-
--tensorflow to be continued  
+- autograd 1.4  
+- pymanopt 2.0  
+- pytorch  
+- tensorflow to be continued  
 
 <!-- banane -->
 
