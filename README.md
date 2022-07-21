@@ -20,7 +20,7 @@ For more information there is a documentation.
 
 the use of program progpenlab requires the installation of the package **[penlab](https://web.mat.bham.ac.uk/kocvara/penlab/)**.  
 the use of program progmanopt requires **[matlab](https://fr.mathworks.com/products/matlab.html)**  version R2018b + and the installation of the package **[manopt](https://www.manopt.org/tutorial.html)**.  
-the use of program progrotation in matlab requires packages.
+the use of program progrotation in matlab requires no packages.
 
 ### PYTHON
 
