@@ -5,8 +5,8 @@
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
 For more information there is a documentation.  
 
-- [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-informational.svg)](https://shields.io/)
-- [![Generic badge](https://img.shields.io/badge/with made-matlab-informational.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/with--made-python-informational.svg)](https://shields.io/)
+- [![Generic badge](https://img.shields.io/badge/with--made-matlab-informational.svg)](https://shields.io)
 <!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
 <!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
 
@@ -38,7 +38,7 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 ### PYTHON
 
 <!--**[python](https://www.python.org/)** version 3.5 +-->
-- [![Generic badge](https://img.shields.io/badge/python-3.5-brithtgreen.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/python-3.5-brightgreen.svg)](https://shields.io)
 the use of program progmanopt requires :  
 
 - pandas  
