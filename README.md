@@ -6,8 +6,8 @@ This project is to provide tools in several programming languages to find kernel
 For more information there is a documentation.  
 
 - [![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
-- [![shields](http://img.shields.io/badges/made with-python-informational)](https://shields.io)
-- [![shields](http://img.shields.io/badges/made with-matlab-informational)](https://shields.io)
+- [[shields](http://img.shields.io/badges/made with-python-informational)](https://shields.io)
+- [[shields](http://img.shields.io/badges/made with-matlab-informational)](https://shields.io)
 <!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
 <!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
 
@@ -39,7 +39,7 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 ### PYTHON
 
 <!--**[python](https://www.python.org/)** version 3.5 +-->
-- [![shields](http://img.shields.io/badges/python-3.5+-brightgreen)](https://shields.io/)
+- [[shields](http://img.shields.io/badges/python-3.5+-brightgreen)](https://shields.io/)
 the use of program progmanopt requires :  
 
 - pandas  
@@ -51,10 +51,10 @@ the use of program progmanopt requires :
 ### MATLAB
 
 <!--**[matlab](https://fr.mathworks.com/products/matlab.html)** version R2018b +-->
-- [![shields](http://img.shields.io/badges/matlab-r2018b-brightgreen)](https://shields.io/)
+- [[shields](http://img.shields.io/badges/matlab-r2018b-brightgreen)](https://shields.io/)
 
-the use of program progpenlab requires the installation of the package [![shield](http://img.shields.io/badges/penlab-1.04-brightgreen)](https://shields.io/).  
-the use of program progmanopt requires the installation of the package [![shield](http://img.shields.io/badges/manopt-7.0.0-brightgreen)](https://shields.io/).   
+the use of program progpenlab requires the installation of the package [[shield](http://img.shields.io/badges/penlab-1.04-brightgreen)](https://shields.io/).  
+the use of program progmanopt requires the installation of the package [[shield](http://img.shields.io/badges/manopt-7.0.0-brightgreen)](https://shields.io/).   
 the use of program progrotation in matlab requires no packages.
 
 <!--
