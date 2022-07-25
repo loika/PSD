@@ -5,7 +5,7 @@
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
 For more information there is a documentation.  
 
-- [![Generic badge](https://img.shields.io/badge/with made-python-informational.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-informational.svg)](https://shields.io/)
 - [![Generic badge](https://img.shields.io/badge/with made-matlab-informational.svg)](https://shields.io)
 <!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
 <!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
