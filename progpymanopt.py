@@ -195,10 +195,12 @@ def solver_pymanopt(Pi,X,r,optimizer,backend):
 
 
 if __name__ == "__main__":
+    import csv
     N = 20
     n = 3
     q = 1
     r = 1
+    i = 0
     Pi,X,Ppi,K,K_r = example(N,n,q)
     optimizer = pymanopt.optimizers.trust_regions.TrustRegions()
 
