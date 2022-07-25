@@ -20,14 +20,14 @@ matlab_ is directory, where thre are matalab programs
 ## to get started
 
 ### PYTHON
-To use the program with the manopt method, it is neccessary in the progpymanopt file to change the variable Pi and X and r in the "if __name__ == '__main__'". Pi must be of type numpy dim-1 and X must be of type numpy dim-2 and r must be of type int or float.
+To use the program with the manopt method, it is neccessary in the progpymanopt file to change the variable Pi and X and r in the "if __name__ == '__main__'". Pi must be of type numpy dim-1 and X must be of type numpy dim-2 and r must be of type int or float.     
 
 ### MATLAB
-To use the program with the manopt method, it is neccessary in the progmanopt file to change the variable Pi and X and r. Pi must be of real column vector and X must be of real matrice and r must be of type int or float.  
-To use the program with the rotation method, it is neccessary in the progrotation file to change the variable K and X. K must be of real or imaginary matrix and X must be of real matrice.  
-To use the program with the penlab method, it is neccessary in the progpenlab file to change the variable K and X. K must be of real matrix and and Pi real column vector and X must be of real matrice.  
+To use the program with the manopt method, it is neccessary in the progmanopt file to change the variable Pi and X and r. Pi must be of real column vector and X must be of real matrice and r must be of type int or float.        
+To use the program with the rotation method, it is neccessary in the progrotation file to change the variable K and X. K must be of real or imaginary matrix and X must be of real matrice.       
+To use the program with the penlab method, it is neccessary in the progpenlab file to change the variable K and X. K must be of real matrix and and Pi real column vector and X must be of real matrice.        
 
-disclamers the programs penlab runs but they do not give satisfactory results.
+disclamers the programs penlab runs but they do not give satisfactory results.          
 <!--
 ### R
 ### Julia
@@ -41,18 +41,18 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 - [![Generic badge](https://img.shields.io/badge/python-3.5-brightgreen.svg)](https://shields.io)
 the use of program progmanopt requires :  
 
-- pandas  
-- autograd 1.4  
-- pymanopt 2.0  
-- pytorch  
+- [![Generic badge](https://img.shields.io/badge/pandas-0.24.2-brithtgreen.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/autograd-1.4-brithtgreen.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/manopt-2.0-brithtgreen.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
 - tensorflow to be continued
 
 ### MATLAB
 
 <!--**[matlab](https://fr.mathworks.com/products/matlab.html)** version R2018b +-->
-- [![Generic badge](http://img.shields.io/badges/matlab-r2018b-brightgreen.svg)](https://shields.io/)
+- [![Generic badge](https://img.shields.io/badge/matlab-R2018b-brithtgreen.svg)](https://shields.io)
 
-the use of program progpenlab requires the installation of the package [![Generic badge](https://img.shields.io/badge/penlab-1.04-brithtgreen.svg)](https://shields.io).  
+the use of program progpenlab requires the installation of the package [![Generic badge](https://img.shields.io/badge/pelab-1.04-brithtgreen.svg)](https://shields.io).  
 the use of program progmanopt requires the installation of the package [![Generic badge](https://img.shields.io/badge/manopt-7.0.0-brithtgreen.svg)](https://shields.io).   
 the use of program progrotation in matlab requires no packages.
 
@@ -64,11 +64,11 @@ the use of program progrotation in matlab requires no packages.
 
 ## Contibutor
 
-- Vincent LOONIS
-- Fabrice Nathan TCHAZOU KAMWA
-- @loik77360
+- **Vincent LOONIS**
+- **Fabrice Nathan TCHAZOU KAMWA**
+- **Loik johan ACAKPO-ADDRA** _alias_ [@loik77360](https://github.com/loik77360/PSD)
 
-## LinkS
+## Links
 
 ### packages
 
