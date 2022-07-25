@@ -5,9 +5,8 @@
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
 For more information there is a documentation.  
 
-- [![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
-- [![Generic badge](https://img.shields.io/badge/with--made-python-informational.svg)](https://shields.io)
-- [![Generic badge](http://img.shields.io/badges/made with-matlab-informational.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/with made-python-informational.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/with made-matlab-informational.svg)](https://shields.io)
 <!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
 <!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
 
@@ -39,7 +38,7 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 ### PYTHON
 
 <!--**[python](https://www.python.org/)** version 3.5 +-->
-- [![Generic badge](http://img.shields.io/badges/python-3.5+-brightgreen.svg)](https://shields.io/)
+- [![Generic badge](https://img.shields.io/badge/python-3.5-brithtgreen.svg)](https://shields.io)
 the use of program progmanopt requires :  
 
 - pandas  
@@ -53,8 +52,8 @@ the use of program progmanopt requires :
 <!--**[matlab](https://fr.mathworks.com/products/matlab.html)** version R2018b +-->
 - [![Generic badge](http://img.shields.io/badges/matlab-r2018b-brightgreen.svg)](https://shields.io/)
 
-the use of program progpenlab requires the installation of the package [![Generic badge](http://img.shields.io/badges/penlab-1.04-brightgreen.svg)](https://shields.io/).  
-the use of program progmanopt requires the installation of the package [![Generic badge](http://img.shields.io/badges/manopt-7.0.0-brightgreen.svg)](https://shields.io/).   
+the use of program progpenlab requires the installation of the package [![Generic badge](https://img.shields.io/badge/penlab-1.04-brithtgreen.svg)](https://shields.io).  
+the use of program progmanopt requires the installation of the package [![Generic badge](https://img.shields.io/badge/manopt-7.0.0-brithtgreen.svg)](https://shields.io).   
 the use of program progrotation in matlab requires no packages.
 
 <!--
