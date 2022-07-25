@@ -10,5 +10,5 @@ function res = f(K,X,I)
     D = K.* I;
     invD = inv(D);
     invD_X = inv(D)*X;
-    res = trace(invD_X' * (K .* (I - conj(K))) * invD_X);
+    res = trace(invD_X' * (K .* (I - K)) * invD_X);
 end

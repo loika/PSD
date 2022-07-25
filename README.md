@@ -39,6 +39,7 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 
 <!--**[python](https://www.python.org/)** version 3.5 +-->
 - [![Generic badge](https://img.shields.io/badge/python-3.5-brightgreen.svg)](https://shields.io)
+
 the use of program progmanopt requires :  
 
 - [![Generic badge](https://img.shields.io/badge/pandas-0.24.2-brithtgreen.svg)](https://shields.io)
@@ -82,7 +83,7 @@ the use of program progrotation in matlab requires no packages.
 
 
 ### Documentation
-- **[rotattion](www.elsevier.com/locate/jspi)** page 60-88  
+- **[rotation](www.elsevier.com/locate/jspi)** page 60-88  
 - **[PSD](https://www.researchgate.net/publication/359095103_Construire_tous_les_plans_de_sondage_determinantaux)**
 <!-- liks -->
 
