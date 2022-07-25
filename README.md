@@ -6,7 +6,7 @@ This project is to provide tools in several programming languages to find kernel
 For more information there is a documentation.  
 
 - [![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
-- [[shields](http://img.shields.io/badges/made with-python-informational)](https://shields.io)
+- [[shields](https://img.shields.io/badge/with--made-python-informational)](https://shields.io)
 - [[shields](http://img.shields.io/badges/made with-matlab-informational)](https://shields.io)
 <!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
 <!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
@@ -72,6 +72,7 @@ the use of program progrotation in matlab requires no packages.
 ## LinkS
 
 ### packages
+
 - **[penlab]https://web.mat.bham.ac.uk/kocvara/penlab)**
 - **[manopt](https://www.manopt.org/)**
 - **[pandas](https://pandas.pydata.org/)**
