@@ -72,7 +72,7 @@ the use of program progrotation in matlab requires no packages.
 ## LinkS
 
 ### packages
-- **[penlab]https://web.mat.bham.ac.uk/kocvara/penlab/)**
+- **[penlab]https://web.mat.bham.ac.uk/kocvara/penlab)**
 - **[manopt](https://www.manopt.org/)**
 - **[pandas](https://pandas.pydata.org/)**
 - **[autograd](https://pypi.org/project/autograd/)**
