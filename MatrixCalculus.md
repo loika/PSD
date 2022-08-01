@@ -1,4 +1,4 @@
-# <a href="https://pymanopt.org"> Matrix Calculus</a>
+# <a href="http://www.matrixcalculus.org/"> Matrix Calculus</a>
 
 
 
@@ -34,7 +34,7 @@ $$ f(K,X) = \mathrm{tr}(X^\top \cdot \mathrm{inv}(K\odot \mathbb{I})\cdot (K\odo
 factorize form:
 
 
-$$ \nabla f =  \mathbb{I} \odot (T_1 *(mathbb{I} - 2 \cdot T_2 \cdot T_0)) - 2 \cdot T_1 \odot K  $$
+$$ \nabla f =  \mathbb{I} \odot (T_1 *(\mathbb{I} - 2 \cdot T_2 \cdot T_0)) - 2 \cdot T_1 \odot K  $$
 
 where :
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
