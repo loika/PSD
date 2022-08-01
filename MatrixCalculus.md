@@ -34,7 +34,7 @@ $$ f(K,X) = \mathrm{tr}(X^\top \cdot \mathrm{inv}(K\odot \mathbb{I})\cdot (K\odo
 factorize form:
 
 
-$$ \nabla f =  \mathbb{I} \odot (T_1 *(\mathbb{I} - 2 \cdot T_2 \cdot T_0)) - 2 \cdot T_1 \odot K  $$
+$$ \nabla f =  \mathbb{I} \odot (T_1 \odot(\mathbb{I} - 2 \cdot T_2 \cdot T_0)) - 2 \cdot T_1 \odot K  $$
 
 where :
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
@@ -45,7 +45,7 @@ where :
 
 #### derive1
 
-$$\nabla \text{derive1} = \mathrm{tr}(mathbb{I} \odot (T_5 \cdot (mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0)))$$
+$$\nabla \text{derive1} = \mathrm{tr}(mathbb{I} \odot (T_5 \cdot (\mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0)))$$
 
 <img src="docs/img/funhess1.png?raw=true" width="800">
 
@@ -69,7 +69,7 @@ $$\nabla \text{derive2} = -2 \cdot \mathrm{tr}(T_1 \odot K )$$
 
 factorize form:
 
-$$\nabla \text{derive2} = -2 \odot \mathbb{I} \odot (T_1 - 2 \odot T_0 \odot T_2 \odot T_1)$$
+$$\nabla \text{derive2} = -2 \cdot \mathbb{I} \odot (T_1 - 2 \odot T_0 \odot T_2 \odot T_1)$$
 
 where:
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
