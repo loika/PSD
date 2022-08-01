@@ -45,7 +45,7 @@ where :
 
 $$\nabla \text{derive1} = \mathrm{tr}(mathbb{I} \odot (T_5 \cdot (mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0)))$$
 
-<img src="docs/img/funhess1.png?raw=true" width="150">
+<img src="docs/img/funhess1.png?raw=true" width="500">
 
 factorize form:
 
@@ -63,7 +63,7 @@ where:
 
 $$\nabla \text{derive2} = -2 \cdot \mathrm{tr}(T_1 \odot K )$$
 
-<img src="docs/img/funhess2.png?raw=true" width="150">
+<img src="docs/img/funhess2.png?raw=true" width="500">
 
 factorize form:
 

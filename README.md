@@ -3,8 +3,14 @@
 "plan de sandage déterminantaux"
 
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
+
+with parametors:
+- $\Pi$ a vector length $N$
+- $X$ a matrix size $(N \times Q)$
+- $r$ real number
+
 For more information there is a documentation.
-<!-- en faire plus -->
+
 
 
 - [![Generic badge](https://img.shields.io/badge/with--made-python-informational.svg)](https://shields.io/)
@@ -23,7 +29,7 @@ matlab_ is directory, where thre are matalab programs
 ## to get started
 
 ### PYTHON
-To use the program with the manopt method, it is neccessary in the progpymanopt file to change the variable Pi and X and r in the "if __name__ == '__main__'". Pi must be of type numpy dim-1 and X must be of type numpy dim-2 and r must be of type int or float.  
+To use the program with the manopt method, it is neccessary in the progpymanopt file to change the variable Pi and X and r in the `if __name__ == '__main__'`. Pi must be of type numpy dim-1 and X must be of type numpy dim-2 and r must be of type int or float.  
 
 ### MATLAB
 To use the program with the manopt method, it is neccessary in the progmanopt file to change the variable Pi and X and r. Pi must be of real column vector and X must be of real matrice and r must be of type int or float.        
@@ -50,6 +56,16 @@ the use of program progmanopt requires :
 - [![Generic badge](https://img.shields.io/badge/manopt-2.0-brithtgreen.svg)](https://shields.io)
 - [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
 - tensorflow to be continued
+
+#### dependance
+
+#### Note
+
+`requirements.txt`
+
+```
+pip install -r requirements.txt
+```
 
 <!-- dépandance --> 
 
