@@ -1,17 +1,17 @@
+<a href="https://www.insee.fr/fr/accueil"> <img src="docs/img/Logo_Insee.svg.png?raw=true" width="150" align="right"> </a>
 # PSD
 
 "plan de sandage déterminantaux"
 
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
 
-with parametors:
 - $\Pi$ a vector length $N$
-- $X$ a matrix size $(N \times Q)$
-- $r$ real number
+- $X$ a matrix dim $(N \times Q)$
+- $r$ a real number
+- $K$ a matrix (kernel) dim $(N \times Q)$
+
 
 For more information there is a documentation.
-
-
 
 - [![Generic badge](https://img.shields.io/badge/with--made-python-informational.svg)](https://shields.io/)
 - [![Generic badge](https://img.shields.io/badge/with--made-matlab-informational.svg)](https://shields.io)
@@ -105,7 +105,7 @@ the use of program progrotation in matlab requires no packages.
 
 
 ### Documentation
-- **[rotation](docs/documentation/Determinantal%20Sampling%20Designs%20(JSPI%202019).pdf)** page 60-88  
+- **[rotation](docs/documentation/Determinantal%20Sampling%20Designs%20(JSPI%202019).pdf)** algorithm 5.2  
 - **[PSD and fickus](docs/documentation/Techniques_d_enquete.pdf)**
 <!-- liks -->
 
