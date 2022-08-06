@@ -1,7 +1,7 @@
 <a href="https://www.insee.fr/fr/accueil"> <img src="docs/img/Logo_Insee.svg.png?raw=true" width="150" align="right"> </a>
 # PSD
 
-"plan de sandage déterminantaux"
+"plan de sondage déterminantal"
 
 This project is to provide tools in several programming languages to find kernels that best minimize the objective function.  
 
