@@ -50,7 +50,7 @@ for the calculation of the hessian, we split in two parts.
 
 #### derive1
 
-$$ \nabla \text{derive1} = \mathrm{tr}(mathbb{I} \odot (T_5 \cdot (\mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0))) $$
+$$ \nabla \text{derive1} = \mathrm{tr}(\mathbb{I} \odot (T_5 \cdot (\mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0))) $$
 
 <img src="docs/img/funhess1.png?raw=true" width="800">
 
@@ -89,13 +89,13 @@ $\nabla \text{derive2}$ is symmetric.
 
 ### function
 
-$$ p(K,\Pi) = \mathrm{tr}((K \odt \mathbb{I}- \mathrm{diag}(\Pi))^2) $$
+$$ p(K,\Pi) = \mathrm{tr}((K \odot \mathbb{I}- \mathrm{diag}(\Pi))^2) $$
 
 ### gradient
 
 <img src="docs/img/pengrad.PNG?raw=true" width="800">
 
-$$ \nabla p = 2 \cdot \mathbb{I} \codot (K \odot \mathbb{I} - \mathrm{diag}(\Pi)) $$
+$$ \nabla p = 2 \cdot \mathbb{I} \odot (K \odot \mathbb{I} - \mathrm{diag}(\Pi)) $$
 
 ### hessian
 
@@ -114,4 +114,4 @@ the cost gradient is good.
 
 <img src="docs/img/costhessian.PNG?raw=true" width="800">
 
-the cost is not symmetric because the derive1 therefore false. I don't know  the reason that the objective function hessian is incorrect.
+the cost is not symmetric because the derive1 therefore false. I don't know  the reason that the objective function hessian is incorrect. In the programs, we use the trustregions method, the method only takes into account the cost function and the gradient
