@@ -18,7 +18,8 @@ subject to :
 - $N$ is a interger such that $N > 1$
 - $n$ is a interger such that $1 < n < N$
 - $Q$ is a interger such that $Q > 1$
-- $\Pi$ a vector such that $\Pi = (\Pi_1,\cdots,\Pi_N)$ and $\sum_{i = 1}^N \Pi_i = n$ and $0 < \Pi_i < 1 , i=1\cdots=N$ 
+- $\Pi$ a vector such that $\Pi = (\Pi_1,\cdots,\Pi_N)$ and $0 < \Pi_i < 1 , i=1\cdots=N$ and
+$$\sum_{i = 1}^N \Pi_i = n$$
 - $X$ is a matrix such that $\mathrm{dim}(X) = (N,Q)$
 - $r$ is a number such that $r \in \mathbb{R}$
 - $K$ is a matrix such that $\mathrm{dim}(K) = (N,N)$, $\mathrm{diag}(K) = \Pi$, $K = v \cdot v^\top$ with $v$ a matrix $v^\top \cdot v = \mathbb{I}_n$ $\mathrm{dim}(K) = (N,n)$

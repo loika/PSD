@@ -1,4 +1,4 @@
-<a href="http://www.matrixcalculus.org/"> <img src="docs/img/MatrixCalculus.PNG" width="150" align="rcenter"> </a>
+<a href="http://www.matrixcalculus.org/"> <img src="docs/img/MatrixCalculus.PNG?raw=true" width="150" align="rcenter"> </a>
 
 # Matrix Calculus
 
