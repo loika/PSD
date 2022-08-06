@@ -21,7 +21,7 @@ subject to :
 - $\Pi$ a vector such that $\Pi = (\Pi_1,\cdots,\Pi_N)$ and $\sum_{i = 1}^N \Pi_i = n$ and $0 < \Pi_i < 1 , i=1\cdots=N$ 
 - $X$ is a matrix such that $\mathrm{dim}(X) = (N,Q)$
 - $r$ is a number such that $r \in \mathbb{R}$
-- $K$ is a matrix such that $\mathrm{dim}(K) = (N,N)$, $\mathrm{diag}(K) = \Pi$, $K = v \odot v^\top$ with $v$ a matrix $v^\top \cdot v = \mathbb{I}_n$ $\mathrm{dim}(K) = (N,n)$
+- $K$ is a matrix such that $\mathrm{dim}(K) = (N,N)$, $\mathrm{diag}(K) = \Pi$, $K = v \cdot v^\top$ with $v$ a matrix $v^\top \cdot v = \mathbb{I}_n$ $\mathrm{dim}(K) = (N,n)$
 
 For more information there is a documentation.
 
@@ -89,8 +89,8 @@ matlab_ is directory, where thre are matalab programs.
 - create_penlab create problem
 ##### progrotation
 - algo_rotation.m solver the problem with algo rotation
-- completed_W.m completed $W_{k,l}[\theta]$ matrix
-- reset_W.m reset $W_{k,l}[\theta]$ matrix
+- completed_W.m completed $W_{k,l}(\theta)$ matrix
+- reset_W.m reset $W_{k,l}(\theta)$ matrix
 - rotation.m  algo roatation
 <!-- --> 
 ## to get started
@@ -121,7 +121,6 @@ To use the program with the rotation method, it is neccessary in `progrotation.m
 
 ### PYTHON
 
-<!--**[python](https://www.python.org/)** version 3.5 +-->
 - [![Generic badge](https://img.shields.io/badge/python-3.7.3-brightgreen.svg)](https://shields.io)
 
 the use of program progmanopt requires :  

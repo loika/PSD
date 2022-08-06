@@ -1,10 +1,10 @@
-<a href="http://www.matrixcalculus.org/"> <img src="docs/img/MatrixCalculus.PNG?raw=true" width="150" align="right"> </a>
+<a href="http://www.matrixcalculus.org/"> <img src="docs/img/MatrixCalculus.PNG" width="150" align="rcenter"> </a>
 
 # Matrix Calculus
 
 
 We derive a function of K,cost function : 
-$$C(K,X,\Pi) = f(K,X) + r\, p(K,\Pi)$$
+$$C(K,X,\Pi) = f(K,X) + r \cdot p(K,\Pi)$$
 
 where:
 - $f$ objective function
@@ -21,7 +21,7 @@ A,B,C are matrix
 
 - $A \cdot B + A \cdot C = A \cdot (B + C)$
 
-- $\mathbb{I} \odot A = \mathbb{I} \odot A^\top \Rightarrow \mathbb{I} \odot (A + A^\top) = 2\cdot \mathbb{I}\odot A = 2\,\mathbb{I}\odot A^\top$
+- $\mathbb{I} \odot A = \mathbb{I} \odot A^\top \Rightarrow \mathbb{I} \odot (A + A^\top) = 2\cdot \mathbb{I}\odot A = 2\cdot \mathbb{I}\odot A^\top$
 
 
 ## objective function
@@ -37,7 +37,7 @@ $$ f(K,X) = \mathrm{tr}(X^\top \cdot \mathrm{inv}(K\odot \mathbb{I})\cdot (K\odo
 factorize form:
 
 
-$$ \nabla f =  \mathbb{I} \odot (T_1 \odot(\mathbb{I} - 2 \, T_2 \cdot T_0)) - 2 \cdot T_1 \odot K $$
+$$ \nabla f =  \mathbb{I} \odot (T_1 \odot(\mathbb{I} - 2 \cdot T_2 \cdot T_0)) - 2 \cdot T_1 \odot K $$
 
 where :
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
@@ -50,13 +50,13 @@ for the calculation of the hessian, we split in two parts.
 
 #### derive1
 
-$$ \nabla \text{derive1} = \mathrm{tr}(\mathbb{I} \odot (T_5 \cdot (\mathbb{I} - 2 \, (K \odot T_2) \cdot T_0))) $$
+$$ \nabla \text{derive1} = \mathrm{tr}(\mathbb{I} \odot (T_5 \cdot (\mathbb{I} - 2 \cdot (K \odot T_2) \cdot T_0))) $$
 
 <img src="docs/img/funhess1.png?raw=true" width="800">
 
 factorize form:
 
-$$ \nabla \text{derive1} = -2\,(T_6 \odot (\mathbb{I}- 2\cdot K) + \mathbb{I}(T_0 \odot T_4 \odot T_5 - T_3 \cdot T_5 \odot T_0)) $$
+$$ \nabla \text{derive1} = -2\cdot(T_6 \odot (\mathbb{I}- 2\cdot K) + \mathbb{I}(T_0 \odot T_4 \odot T_5 - T_3 \cdot T_5 \odot T_0)) $$
 
 where:
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
@@ -70,13 +70,13 @@ $\nabla \text{derive1}$ is not symetric.
 
 #### derive2
 
-$$ \nabla \text{derive2} = -2,\mathrm{tr}(T_1 \odot K ) $$
+$$ \nabla \text{derive2} = -2 \cdot \mathrm{tr}(T_1 \odot K ) $$
 
 <img src="docs/img/funhess2.png?raw=true" width="800">
 
 factorize form:
 
-$$ \nabla \text{derive2} = -2 \, \mathbb{I} \odot (T_1 - 2 \odot T_0 \odot T_2 \odot T_1) $$
+$$ \nabla \text{derive2} = -2 \cdot \mathbb{I} \odot (T_1 - 2 \odot T_0 \odot T_2 \odot T_1) $$
 
 where:
 - $T_0 = \mathrm{inv}(K\odot \mathbb{I})$
@@ -95,7 +95,7 @@ $$ p(K,\Pi) = \mathrm{tr}((K \odot \mathbb{I}- \mathrm{diag}(\Pi))^2) $$
 
 <img src="docs/img/pengrad.PNG?raw=true" width="800">
 
-$$ \nabla p = 2 \, \mathbb{I} \odot (K \odot \mathbb{I} - \mathrm{diag}(\Pi)) $$
+$$ \nabla p = 2 \cdot \mathbb{I} \odot (K \odot \mathbb{I} - \mathrm{diag}(\Pi)) $$
 
 ### hessian
 
