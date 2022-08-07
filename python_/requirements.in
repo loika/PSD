@@ -1,4 +1,0 @@
-autograd==1.4
-pandas
-torch==1.12.0
-pymanopt==2.0.0

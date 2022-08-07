@@ -142,7 +142,11 @@ the use of program progmanopt requires :
 - [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
 <!-- - [![Generic badge](https://img.shields.io/badge/tensorflow-?-brithtgreen.svg)](https://shields.io) -->
 
-if the packages are not installed. you can install them with `requirements.txt` command line:
+if the packages are not installed. you can install them the command lines in directory `python_`:
+
+```
+pip install --upgrade pymanopt
+```
 
 ```
 pip install -r requirements.txt
