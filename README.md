@@ -64,7 +64,7 @@ python_ is directory, where thre are python programs.
 - funpymanopt.py the functions that use the pymanopt packages
 - progpymanopt.py the main prog
 - requirements.txt and requirements.in install package
-- rutime.txt chanege the version python
+
 
 ### matlab_
 matlab_ is directory, where thre are matalab programs.
@@ -142,14 +142,16 @@ the use of program progmanopt requires :
 - [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
 <!-- - [![Generic badge](https://img.shields.io/badge/tensorflow-?-brithtgreen.svg)](https://shields.io) -->
 
-if the packages are not installed. you can install them the command lines in directory `python_`:
-
-```
-pip install --upgrade pymanopt
-```
+if the packages are not installed. you can install them the command line in directory `python_`:
 
 ```
 pip install -r requirements.txt
+```
+
+
+if the packages pymanopt is not install, you can install with
+```
+pip install --upgrade pymanopt
 ```
 
 ### MATLAB
