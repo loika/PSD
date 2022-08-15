@@ -15,7 +15,7 @@ def example(N, n, x):
     data load in the directory sample
     col corresponds to the name of the columns in the csv file X_N_n.csv
     """
-    data = pd.read_csv("../sample/X_" + str(N) + "_" + str(n) + ".csv")
+    data = pd.read_csv("../data/train/X_" + str(N) + "_" + str(n) + ".csv")
     Pi = data["pi"].to_numpy()
     col = ["x" + str(c) for c in x]
     X = data[col].to_numpy().reshape((N, len(x)))
@@ -25,9 +25,9 @@ def example(N, n, x):
 
 if __name__ == "__main__":
     r = 1
-    Pi, X = example(20,3,[1])
+    Pi, X = example(20, 3, [1])
     optimizer = pymanopt.optimizers.trust_regions.TrustRegions()
-    v, vcost, itereration, time = solver_pymanopt(Pi, X, r, optimizer, "numpy")
+    v, vcost, itereration, time = solver_pymanopt(Pi, X, r, optimizer, "tensorflow")
 
     print("------------------------------------------------------------------")
-    print("objective function :",funobj(v @ v.T, X, anp.eye(X.shape[0])))
+    print("objective function :", funobj(v @ v.T, X, anp.eye(X.shape[0])))

@@ -4,9 +4,9 @@ import pymanopt
 import pymanopt.manifolds
 import pymanopt.optimizers
 import pandas as pd
-# import tensorflow as tf
+import tensorflow as tf
 
-SUPPORTED_BACKENDS = ("autograd", "numpy", "pytorch")  # tensorflow will be next version
+SUPPORTED_BACKENDS = ("autograd", "numpy", "pytorch", "tensorflow")
 
 # OBJECTIVE FUNCTION
 
@@ -17,10 +17,10 @@ def funobj(K, X, I):
     K a numpy dim-2
     X a numpy dim-2
     I a numpy dim-2
-    return:
+    returns:
     a numpy float
     algo:
-    calculate the objective function in function of K,x
+    calculate the objective function
     """
     D = K * I
     invD = anp.linalg.inv(D)
@@ -35,10 +35,10 @@ def penobj(K, Pi):
     args:
     K a numpy dim-2
     Pi a numpy dim-1
-    return:
+    returns:
     a numpy float
     algo:
-    calculate the penality function in function if K,Pi
+    calculate the penality function
     """
     sub = anp.diag(K) - Pi
 
@@ -54,10 +54,10 @@ def fungrad(K, X, I):
     K a numpy dim-2
     X a numpy dim-2
     I a numpy dim-2
-    return:
+    returns:
     a numpy dim-2
     algo:
-    calculate the gradient euclidiean of the objective function in function K,X
+    calculate the gradient euclidiean of the objective function
     """
     D = K * I
     T0 = anp.linalg.inv(D)
@@ -75,10 +75,10 @@ def pengrad(K, Dpi, I):
     K a numpy dim-2
     Dpi a numpy dim-2
     I a numpy dim-2
-    return:
+    returns:
     a numpy dim-2
     algo:
-    calculate the gradient of the penality function in function de K,Dpi = diag(Pi)
+    calculate the gradient of the penality function
     """
     return 2 * I * (K - Dpi)
 
@@ -92,10 +92,10 @@ def funhess(K, X, I):
     K a numpy dim-2
     X a numpy dim-2
     I a numpy dim-2
-    return:
+    returns:
     a numpy dim-2
     algo:
-    calculate the hessian of the objective function in function de K,X
+    calculate the hessian of the objective function
     """
     X2 = X @ X.T
     D = K * I
@@ -117,10 +117,10 @@ def penhess(K, Dpi, I):
     K a numpy dim-2
     Dpi a numpy dim-2
     I a numpy dim-2
-    return:
+    returns:
     a numpy dim-2
     algo:
-    calculate the hessian of the penality function in function de K,Dpi = diag(Pi)
+    calculate the hessian of the penality function
     """
     return 2 * I
 
@@ -129,10 +129,10 @@ def checking_Pi(Pi):
     """
     args:
     Pi a numpy dim-1
-    return:
+    returns:
     the int tuple length-2
     algo:
-    checking Pi conforms and return population size and the number of individuals selected
+    checking Pi conforms and return population size N and the number of individuals selected n
     """
     if not (isinstance(Pi, anp.ndarray)):
         raise ValueError(f"Pi is not nympy | type of Pi:'{type(Pi)}'")
@@ -161,8 +161,8 @@ def checking_Pi(Pi):
 def checking_X(X):
     """
     args:
-    X a numpy dim-1
-    return:
+    X a numpy dim-2
+    returns:
     None
     algo:
     checking X is conforms
@@ -180,7 +180,7 @@ def checking_r(r):
     """
     args:
     r int or float
-    return:
+    returns:
     None
     algo:
     checking r is conforms
@@ -199,10 +199,10 @@ def create_cost_derivate(manifold, Pi, X, r, backend):
     X a numpy dim-2
     r a int or float
     backend a string
-    return:
+    returns:
     a tuple function length-3
     algo:
-    define the problem in function maniform,Pi,X,r,backend
+    define the problem
     """
     euclidean_gradient = euclidean_hessian = None
     N = Pi.shape[0]
@@ -254,7 +254,25 @@ def create_cost_derivate(manifold, Pi, X, r, backend):
                 (torch.diag(K) - Pi_) ** 2
             )
 
-    # elif backend == "tensorflow":
+    elif backend == "tensorflow":
+        Pi_ = tf.convert_to_tensor(Pi)
+        X_ = tf.convert_to_tensor(X)
+        I = tf.eye(N)
+
+        @pymanopt.function.tensorflow(manifold)
+        def cost(v):
+            K = v @ tf.transpose(v)
+            D = K * I
+            invD = tf.linalg.inv(D)
+            invD_X_ = invD @ X_
+            return tf.linalg.trace(
+                tf.tensordot(
+                    tf.transpose(invD_X_),
+                    tf.tensordot((K * (I - K)), invD_X_, axes=1),
+                    axes=1,
+                )
+            ) + r * tf.math.reduce_sum((tf.linalg.diag_part(K) - Pi_) ** 2)
+
     else:
         raise ValueError(f"Unsupported backend '{backend}'")
 
@@ -270,7 +288,7 @@ def solver_pymanopt(Pi, X, r, optimizer, backend, initial_point=None):
     optimizer a class of pymanopt
     backend a string
     initial_point a numpy dim-2 or None
-    return:
+    returns:
     result.point a numpy dim-2
     result.cost a float
     iteration a int
