@@ -54,10 +54,10 @@ For more information there is a documentation.
 `data` is a directory, where there are directory to use for the programs. Each directory is composed of a descriptive file and a csv file.
 
 #### name of the sub-directory
-- **[fickus](https://github.com/loik77360/PSD/tree/main/data/fickus)**
-- **[Kr](https://github.com/loik77360/PSD/tree/main/data/kr)**
-- **[Ppi](https://github.com/loik77360/PSD/tree/main/data/Ppi)**  
-- **[train](https://github.com/loik77360/PSD/tree/main/data/train)**
+- **[fickus](data/fickus/)**
+- **[Kr](data/Kr/)**
+- **[Ppi](data/Ppi/)**  
+- **[train](data/Ppi/)**
 
 
 ### docs
@@ -65,10 +65,10 @@ For more information there is a documentation.
 docs is a directory where the **[images](docs/img/)** and **[documentation](docs/documentation/)** are stored.
 
 ### python_ 
-`python_` is a directory, where thre are python programs.
+**[python_](python_/)** is a directory, where thre are python programs.
 
 ### matlab_
-matlab_ is directory, where thre are matalab programs.
+**[matlab_](matlab_/)** is directory, where thre are matalab programs.
 
 <!-- --> 
 ## to get started
