@@ -22,6 +22,15 @@ def example(N, n, x):
 
     return Pi, X
 
+def write_csv(chemin,matrice,names):
+    File = open(chemin+".csv",'w')
+    obj = csv.writer(File)
+    obj.writerow(names)
+
+    for elem in matrice:
+        obj.writerow(elem)
+    File.close()
+
 
 if __name__ == "__main__":
     r = 1
