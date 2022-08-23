@@ -22,8 +22,8 @@ def example(N, n, x):
 
     return Pi, X
 
-def write_csv(chemin,matrice,names):
-    File = open(chemin+".csv",'w')
+def write_csv(path,matrice,names):
+    File = open(path+".csv",'w')
     obj = csv.writer(File)
     obj.writerow(names)
 
