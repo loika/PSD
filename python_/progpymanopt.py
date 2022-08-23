@@ -27,7 +27,7 @@ if __name__ == "__main__":
     r = 1
     Pi, X = example(20, 3, [1])
     optimizer = pymanopt.optimizers.trust_regions.TrustRegions()
-    v, vcost, itereration, time = solver_pymanopt(Pi, X, r, optimizer, "tensorflow")
+    v, vcost, itereration, time = solver_pymanopt(Pi, X, r, optimizer, "numpy")
 
     print("------------------------------------------------------------------")
     print("objective function :", funobj(v @ v.T, X, anp.eye(X.shape[0])))

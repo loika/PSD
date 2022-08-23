@@ -11,10 +11,9 @@ function [problem] = create_manopt(manifold,Pi,X,r)
     %in the problem in function of manifold,Pi,X,r
     
     Dpi = diag(Pi);
-    I = eye(size(Dpi));
     problem.M = manifold;
-    problem.cost  = @(v) Cost(v,Pi,X,I,r);
-    problem.egrad = @(v) Egrad(v,Dpi,X,I,r);
-    problem.ehess = @(v,H) Ehess(v,H,Dpi,X,I,r);
+    problem.cost  = @(v) Cost(v,Pi,X,r);
+    problem.egrad = @(v) Egrad(v,Dpi,X,r);
+    problem.ehess = @(v,H) Ehess(v,H,Dpi,X,r);
     
 end

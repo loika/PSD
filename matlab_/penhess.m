@@ -1,4 +1,4 @@
-function res = penhess(K,Dpi,I)
+function res = penhess(K,Dpi)
     %args:
     %K : a projection matrix 
     %Dpi : a diagonal matrix of probability vectors Pi
@@ -7,5 +7,6 @@ function res = penhess(K,Dpi,I)
     %res : a matrix
     %algorithme:
     %calculation of the euclidean hessian of the penality function
+    I = eye(size(K));
     res = 2 * I;    
 end

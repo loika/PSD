@@ -9,7 +9,7 @@ function [fY,userdata] = objfun(x,Y,userdata)
     %algotithme:
     %calculate the objective function
     
-    fY = f(Y{1},userdata.X,userdata.I);
+    fY = f(Y{1},userdata.X);
  
 end
 

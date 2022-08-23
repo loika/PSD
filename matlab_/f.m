@@ -1,12 +1,12 @@
-function res = f(K,X,I)
+function res = f(K,X)
     %args:
     %K : a projection matrix
     %X : a matrix
-    %I : a identity matrix
     %returns:
     %res : real number 
     %algorithme:
-    %calculation of the objective function 
+    %calculation of the objective function
+    I = eye(size(K));
     D = K.* I;
     invD = inv(D);
     invD_X = inv(D)*X;

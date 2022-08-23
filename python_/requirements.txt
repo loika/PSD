@@ -9,6 +9,6 @@ autograd>=1.2
 numpy>=1.16
 scipy>=1.0
 torch>=1.0
-tensorflow>=2.0
+#tensorflow>=2.0
 pandas>=0.24.2
 

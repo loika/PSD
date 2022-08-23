@@ -8,6 +8,6 @@ function [df, userdata] = objgrad(x,Y,userdata)
     %userdata : a struct
     %algotithme:
     %calculate gradient of the objective function
-    df = svec2(fungrad(Y{1},userdata.X,userdata.I));
+    df = svec2(fungrad(Y{1},userdata.X));
 end
 

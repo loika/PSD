@@ -6,7 +6,7 @@ import pymanopt.optimizers
 import pandas as pd
 import tensorflow as tf
 
-SUPPORTED_BACKENDS = ("autograd", "numpy", "pytorch", "tensorflow")
+SUPPORTED_BACKENDS = ("autograd", "numpy", "pytorch")
 
 # OBJECTIVE FUNCTION
 
@@ -254,24 +254,6 @@ def create_cost_derivate(manifold, Pi, X, r, backend):
                 (torch.diag(K) - Pi_) ** 2
             )
 
-    elif backend == "tensorflow":
-        Pi_ = tf.convert_to_tensor(Pi)
-        X_ = tf.convert_to_tensor(X)
-        I = tf.eye(N)
-
-        @pymanopt.function.tensorflow(manifold)
-        def cost(v):
-            K = v @ tf.transpose(v)
-            D = K * I
-            invD = tf.linalg.inv(D)
-            invD_X_ = invD @ X_
-            return tf.linalg.trace(
-                tf.tensordot(
-                    tf.transpose(invD_X_),
-                    tf.tensordot((K * (I - K)), invD_X_, axes=1),
-                    axes=1,
-                )
-            ) + r * tf.math.reduce_sum((tf.linalg.diag_part(K) - Pi_) ** 2)
 
     else:
         raise ValueError(f"Unsupported backend '{backend}'")

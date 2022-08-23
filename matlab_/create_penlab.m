@@ -21,8 +21,7 @@ function [penm] = create_penlab(Pi,X,K)
   n = floor(sum(Pi));
   penm.userdata.Pi = Pi;
   penm.userdata.X = X;
-  penm.userdata.I = eye(N,N);
-  [dum,idiag] = svec2(penm.userdata.I); clear dum
+  [dum,idiag] = svec2(eye(N)); clear dum
   penm.userdata.idiag = idiag;
 
   % zeros 'normal' variable

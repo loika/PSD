@@ -8,7 +8,7 @@ function [ddf, userdata] = objhess(x,Y,userdata)
     %userdata : a struct
     %algotithme:
     %calculate hessian of the objective function
-	ddf = diag(svec2(funhess(Y{1},userdata.X,userdata.I)));
+	ddf = diag(svec2(funhess(Y{1},userdata.X)));
     
     
   
