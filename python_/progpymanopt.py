@@ -6,7 +6,7 @@ if __name__ == "__main__":
     Pi, X = example(20, 3, [1, 2])
     optimizer = pymanopt.optimizers.trust_regions.TrustRegions()
     K, vcost, iteration, time, pf = psm(
-        Pi, X, 3, optimizer, "numpy", initial_point=None, cost="normal"
+        Pi, X, 11, optimizer, "numpy", initial_point=None, cost="normal"
     )
 
     print("------------------------------------------------------------------")
