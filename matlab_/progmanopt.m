@@ -6,7 +6,7 @@ i = 3;%couples (N,n) i = 1,2,3
 N_ = liste_N(i);
 n_ = liste_n(i);
 x = [2];%variable Xq q:2,3,4
-data = readtable("../sample/X_"+N_+"_"+n_+".csv");
+data = readtable("../data/train/X_"+N_+"_"+n_+".csv");
 
 
 

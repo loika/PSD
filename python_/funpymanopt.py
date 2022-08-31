@@ -4,24 +4,21 @@ import pymanopt
 import pymanopt.manifolds
 import pymanopt.optimizers
 import pandas as pd
-import tensorflow as tf
 
 SUPPORTED_BACKENDS = ("autograd", "numpy", "pytorch")
 
 # OBJECTIVE FUNCTION
-
-
-def funobj(K, X, I):
+def f(K, X):
     """
     args:
     K a numpy dim-2
     X a numpy dim-2
-    I a numpy dim-2
     returns:
     a numpy float
     algo:
     calculate the objective function
     """
+    I = anp.eye(K.shape[0])
     D = K * I
     invD = anp.linalg.inv(D)
     invD_X = invD @ X
@@ -29,8 +26,23 @@ def funobj(K, X, I):
     return anp.trace(invD_X.T @ (K * (I - K)) @ invD_X)
 
 
+def g(K, invD_X):
+    """
+    args:
+    K a numpy dim-2
+    X a numpy dim-2
+    returns:
+    a numpy float
+    algo:
+    calculate the objective function
+    """
+    I = anp.eye(K.shape[0])
+
+    return anp.trace(invD_X.T @ (K * (I - K)) @ invD_X)
+
+
 # PENALITY FUNCTION
-def penobj(K, Pi):
+def p(K, Pi):
     """
     args:
     K a numpy dim-2
@@ -48,7 +60,7 @@ def penobj(K, Pi):
 # EUCLIDIEAN GRADIANT
 
 
-def fungrad(K, X, I):
+def gradf(K, X):
     """
     args:
     K a numpy dim-2
@@ -59,6 +71,7 @@ def fungrad(K, X, I):
     algo:
     calculate the gradient euclidiean of the objective function
     """
+    I = anp.eye(K.shape[0])
     D = K * I
     T0 = anp.linalg.inv(D)
     X_2 = X @ X.T
@@ -66,10 +79,26 @@ def fungrad(K, X, I):
     T2 = I - K
     T3 = K * T2
 
-    return I * (T1 @ (I - 2 * T3 @ T0)) - 2 * K * T1
+    return T1 * (I - 2 * K) - 2 * I * (T0 @ T3 @ T1)
 
 
-def pengrad(K, Dpi, I):
+def gradg(K, invD_X):
+    """
+    args:
+    K a numpy dim-2
+    X a numpy dim-2
+    I a numpy dim-2
+    returns:
+    a numpy dim-2
+    algo:
+    calculate the gradient euclidiean of the objective function
+    """
+    I = anp.eye(K.shape[0])
+
+    return (invD_X @ invD_X.T) * (I - 2 * K)
+
+
+def gradp(K, Pi):
     """
     args:
     K a numpy dim-2
@@ -80,13 +109,14 @@ def pengrad(K, Dpi, I):
     algo:
     calculate the gradient of the penality function
     """
-    return 2 * I * (K - Dpi)
+    I = anp.eye(K.shape[0])
+    return 2 * I * (K - anp.diag(Pi))
 
 
-# EUCLIDIEAN HESSIAN
+# vouée à disparaitre
 
 
-def funhess(K, X, I):
+def hessf(K, X):
     """
     args:
     K a numpy dim-2
@@ -97,6 +127,7 @@ def funhess(K, X, I):
     algo:
     calculate the hessian of the objective function
     """
+    I = anp.eye(K.shape[0])
     X2 = X @ X.T
     D = K * I
     T0 = anp.linalg.inv(D)
@@ -108,10 +139,10 @@ def funhess(K, X, I):
     derive1 = (T4 + T5) * I + T3 * (I - 2 * K)
     derive2 = ((I - 2 * T0 @ (I * K)) @ T1) * I
 
-    return -2 * (derive1 + derive2)
+    return anp.zeros((K.shape[0], K.shape[0]))  # -2 * (derive1 + derive2)
 
 
-def penhess(K, Dpi, I):
+def hessp(K, Pi):
     """
     args:
     K a numpy dim-2
@@ -122,7 +153,8 @@ def penhess(K, Dpi, I):
     algo:
     calculate the hessian of the penality function
     """
-    return 2 * I
+    I = anp.eye(K.shape[0])
+    return anp.zeros((K.shape[0], K.shape[0]))  # 2 * I
 
 
 def checking_Pi(Pi):
@@ -191,7 +223,7 @@ def checking_r(r):
     return None
 
 
-def create_cost_derivate(manifold, Pi, X, r, backend):
+def create_cost_derivate(manifold, funobj, gradobj, Pi, Y, r, backend):
     """
     args:
     manifold a class of pymanopt
@@ -206,54 +238,39 @@ def create_cost_derivate(manifold, Pi, X, r, backend):
     """
     euclidean_gradient = euclidean_hessian = None
     N = Pi.shape[0]
+    n = int(anp.sum(Pi))
+
     if backend == "autograd":
-        Dpi = anp.diag(Pi)
-        I = anp.eye(N)
 
         @pymanopt.function.autograd(manifold)
         def cost(v):
             K = v @ v.T
 
-            return funobj(K, X, I) + r * penobj(K, Pi)
+            return funobj(K, Y) + r * p(K, Pi)
 
     elif backend == "numpy":
-        Dpi = anp.diag(Pi)
-        I = anp.eye(N)
 
         @pymanopt.function.numpy(manifold)
         def cost(v):
             K = v @ v.T
-            return funobj(K, X, I) + r * penobj(K, Pi)
+            return funobj(K, Y) + r * p(K, Pi)
 
         @pymanopt.function.numpy(manifold)
         def euclidean_gradient(v):
             K = v @ v.T
-            return 2 * (fungrad(K, X, I) + r * pengrad(K, Dpi, I)) @ v
+            return 2 * (gradobj(K, Y) + r * gradp(K, Pi)) @ v
 
         @pymanopt.function.numpy(manifold)
         def euclidean_hessian(v, H):
-            K = v @ v.T
-            return 2 * (
-                (funhess(K, X, I) + r * penhess(K, Dpi, I)) @ (v @ H.T + H @ v.T) @ v
-                + (fungrad(K, X, I) + r * pengrad(K, Dpi, I)) @ H
-            )
+            return anp.zeros((N, n))
 
     elif backend == "pytorch":
-        Pi_ = torch.from_numpy(Pi)
-        X_ = torch.from_numpy(X)
-        I = torch.eye(N)
 
         @pymanopt.function.pytorch(manifold)
         def cost(v):
             K = v @ v.T
-            D = K * I
-            invD = torch.linalg.inv(D)
-            invD_X_ = invD @ X_
 
-            return torch.trace(invD_X_.T @ (K * (I - K)) @ invD_X_) + r * torch.sum(
-                (torch.diag(K) - Pi_) ** 2
-            )
-
+            return torch.from_numpy(funobj(K, Y) + r * p(K, Pi))
 
     else:
         raise ValueError(f"Unsupported backend '{backend}'")
@@ -261,7 +278,7 @@ def create_cost_derivate(manifold, Pi, X, r, backend):
     return cost, euclidean_gradient, euclidean_hessian
 
 
-def solver_pymanopt(Pi, X, r, optimizer, backend, initial_point=None):
+def solver_pymanopt(Pi, X, r, optimizer, backend, initial_point=None, cost="normal"):
     """
     args:
     Pi a numpy dim-1
@@ -289,9 +306,24 @@ def solver_pymanopt(Pi, X, r, optimizer, backend, initial_point=None):
             f"X and Pi no match | dimension of X :'{X.shape}' and dimension of Pi :'{Pi.shape}' "
         )
 
+    if cost == "normal":
+        funobj = f
+        gradobj = gradf
+        Y = X
+
+    elif cost == "low":
+        funobj = g
+        gradobj = gradg
+        D = anp.diag(Pi)
+        invD = anp.linalg.inv(D)
+        invD_X = invD @ X
+        Y = invD_X
+    else:
+        raise ValueError(f"cost is undefined | :'{cost}' ")
+
     manifold = pymanopt.manifolds.grassmann.Grassmann(N, n)
     cost, euclidean_gradient, euclidean_hessian = create_cost_derivate(
-        manifold, Pi, X, r, backend
+        manifold, funobj, gradobj, Pi, Y, r, backend
     )
     problem = pymanopt.Problem(
         manifold,
@@ -318,3 +350,53 @@ def solver_pymanopt(Pi, X, r, optimizer, backend, initial_point=None):
         new_cost = result.cost
 
     return result.point, result.cost, iteration, time
+
+
+def psm(Pi, X, R, optimizer, backend, initial_point=None, cost="normal"):
+    """
+    args:
+    Pi a numpy dim-1
+    X a numpy dim-2
+    r a int or float
+    optimizer a class of pymanopt
+    backend a string
+    initial_point a numpy dim-2 or None
+    R int
+    returns:
+    result.point a numpy dim-2
+    result.cost a float
+    iteration a int
+    time a float
+    algo:
+        path following method
+    """
+
+    R_ = [10**i for i in range(R)]
+    optimizer = pymanopt.optimizers.trust_regions.TrustRegions()
+    ker = []
+    Vcost = []
+    Iteration = []
+    Time = []
+    P = anp.zeros(R)
+    v = None
+    for i in range(len(R_)):
+        r = R_[i]
+        v, vcost, iteration, time = solver_pymanopt(
+            Pi, X, r, optimizer, "numpy", initial_point=v
+        )
+        K = v @ v.T
+        ker.append(v.copy())
+        Vcost.append(vcost)
+        Iteration.append(iteration)
+        Time.append(time)
+        P[i] = p(K, Pi)
+
+    index = anp.argmin(P)
+
+    return (
+        ker[index] @ ker[index].T,
+        Vcost[index],
+        Iteration[index],
+        Time[index],
+        P[index],
+    )

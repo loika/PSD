@@ -12,14 +12,13 @@ function [Kr,f_Kr,cpt] = solver_rotation(problem)
     %Kr is the simular matrix at K that minimizes the objective function.
     %f_Kr objective function of Kr
     %cpt is rotation number
-    cpt = 0;
+     cpt = 0;
     K = problem.K;
     X = problem.X;
     [Kr,f_Kr,change] = rotation(K,X);
-    cpt = cpt + change;
-    while change        
+    while change
+        cpt = cpt + 1;
         [Kr,f_Kr,change] = rotation(Kr,X);
-        cpt = cpt + change;                
     end
     
 end
