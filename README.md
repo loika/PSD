@@ -43,8 +43,8 @@ For more information there is a documentation.
 
 - [![Generic badge](https://img.shields.io/badge/with--made-python-informational.svg)](https://shields.io/)
 - [![Generic badge](https://img.shields.io/badge/with--made-matlab-informational.svg)](https://shields.io)
-<!-- - [![shield](http://img.shields.io/badges/made with-r-informational)](http://forthebadge.com) -->
-<!-- - [![shield](http://img.shields.io/badges/made with-matlab-informational)](http://forthebadge.com) -->
+- [![Generic badge](https://img.shields.io/badge/with--made-r-informational.svg)](https://shields.io)
+
 
 
 ## descriptive on the directorys
@@ -89,10 +89,12 @@ disclamers the programs penlab runs but they do not give satisfactory results.
 
 To use the program with the penlab method, it is neccessary in `progpenlab.m` to change the variable $K$ and X. K,Pi. K must be of real matrix and and Pi real column vector and X must be of real matrice.
 #### rotation    
-To use the program with the rotation method, it is neccessary in `progrotation.m`  to change the variable K and X. K must be of real or hermitian matrix and X must be of real matrice.         
+To use the program with the rotation method, it is neccessary in `progrotation.m`  to change the variable K and X. K must be of real or hermitian matrix and X must be of real matrice.
+
+### R
+
 <!--
  $\Omega \sim \mathcal{U}([0,1]^{N \times n})$
-### R
 ### Julia
 -->
 
@@ -106,7 +108,7 @@ the use of program progmanopt requires :
 
 - [![Generic badge](https://img.shields.io/badge/pandas-0.24.2-brithtgreen.svg)](https://shields.io)
 - [![Generic badge](https://img.shields.io/badge/autograd-1.4-brithtgreen.svg)](https://shields.io)
-- [![Generic badge](https://img.shields.io/badge/manopt-2.0-brithtgreen.svg)](https://shields.io)
+- [![Generic badge](https://img.shields.io/badge/pymanopt-2.0-brithtgreen.svg)](https://shields.io)
 - [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
 <!-- - [![Generic badge](https://img.shields.io/badge/tensorflow-?-brithtgreen.svg)](https://shields.io) -->
 
