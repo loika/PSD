@@ -13,7 +13,7 @@ data = readtable("../data/train/X_"+N_+"_"+n_+".csv");
 Pi = table2array(data(:,5));
 X = table2array(data(:,x));
 N = length(Pi);
-data = readtable("../data/train/K_"+N_+"_"+n_+".csv");
+data = readtable("../data/fickus/K_"+N_+"_"+n_+".csv");
 K = table2array(data(:,2:end));
 
 penm = create_penlab(Pi,X,K);
