@@ -399,4 +399,5 @@ def psm(Pi, X, R, optimizer, backend, initial_point=None, cost="normal"):
         Iteration[index],
         Time[index],
         P[index],
+        R_[index],
     )
