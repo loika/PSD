@@ -110,7 +110,7 @@ the use of program progmanopt requires :
 - [![Generic badge](https://img.shields.io/badge/autograd-1.4-brithtgreen.svg)](https://shields.io)
 - [![Generic badge](https://img.shields.io/badge/pymanopt-2.0-brithtgreen.svg)](https://shields.io)
 - [![Generic badge](https://img.shields.io/badge/pytorch-1.12-brithtgreen.svg)](https://shields.io)
-<!-- - [![Generic badge](https://img.shields.io/badge/tensorflow-?-brithtgreen.svg)](https://shields.io) -->
+- [![Generic badge](https://img.shields.io/badge/tensorflow-2.0-brithtgreen.svg)](https://shields.io)
 
 if the packages are not installed. you can install them the command line in directory `python_`:
 
@@ -156,7 +156,7 @@ the use of program progrotation in matlab requires no packages.
 - **[pandas](https://pandas.pydata.org/)**
 - **[autograd](https://pypi.org/project/autograd/)**
 - **[pytorch](https://pytorch.org/)**
-<!-- **[tensorflow](https://www.manopt.org/tutorial.html)** -->
+- **[tensorflow](https://www.tensorflow.org/?gclid=Cj0KCQjwhY-aBhCUARIsALNIC04wy89dnANupA4GHXYWCkf8gZHdjTyxbTXGWfFi65pYQxtttnAkVecaAkccEALw_wcB)**
 
 
 

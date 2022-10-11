@@ -389,7 +389,7 @@ def psm(Pi, X, R, optimizer, backend, initial_point=None, cost="normal"):
         Vcost.append(vcost)
         Iteration.append(iteration)
         Time.append(time)
-        P[i] = p(K, Pi)
+        P[i] = r * p(K, Pi)
 
     index = anp.argmin(P)
 
