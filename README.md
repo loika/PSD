@@ -141,7 +141,7 @@ the use of program progrotation in matlab requires no packages.
 
 -->
 
-## Contibutor
+## Contributor
 
 - **Vincent LOONIS** _alias_ [@GypaeteBarbu](https://github.com/GypaeteBarbu)
 - **Fabrice Nathan TCHAZOU KAMWA** _alias_ [@fabrice17p035](https://github.com/fabrice17p035)
