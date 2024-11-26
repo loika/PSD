@@ -1,0 +1,14 @@
+---
+- name: Basic sytem setup
+  hosts: ubu1
+  become: true
+  vars:
+    user_name: 'user3'
+    user_state: 'present'
+  tasks:
+    - name: Creaction d'un user
+      ansible.builtin.user:
+        name: "{{ user_name }}"
+        state: "{{ uuser_state }}"
+        create_home: true
+        shell: /bin/bash
